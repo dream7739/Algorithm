@@ -24,15 +24,16 @@ int Count(int s){
 
 
 int main() {
-    int m, i, lt=1, rt=0, mid, res;
+    int m, i, lt=1, rt=0, mid, res, maxx=-2147000000;
     scanf("%d %d", &n, &m);
     for(i=1;i<=n;i++){
         scanf("%d", &a[i]);
         rt=rt+a[i];
+        if(a[i]>maxx) maxx=a[i]; //배열 중 가장 큰 값 찾기(DVD는 가장 큰 용량을 담을 수 있어야 함)
     }
     while(lt<=rt){
         mid=(lt+rt)/2; //dvd한 개의 최소 용량
-        if(Count(mid)<=m){
+        if(Count(mid)<=m && mid>=maxx){
             res=mid;
             rt=mid-1;
         }else{
