@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-int a[51][51];
+int a[60][60];
 int dx[4]={-1, 0, 1, 0}; //시계 방향 행 변경
 int dy[4]={0, 1, 0, -1}; //시계 방향 열 변경
 
@@ -12,6 +12,7 @@ int dy[4]={0, 1, 0, -1}; //시계 방향 열 변경
 int main() {
     int n, i, k, j, cnt=0, flag;
     scanf("%d", &n);
+    //vector<vector<int> > a(n+2, vector<int>(n+2, 0));
     for(i=1;i<=n;i++){
         for(j=1;j<=n;j++){
             scanf("%d",&a[i][j]);
