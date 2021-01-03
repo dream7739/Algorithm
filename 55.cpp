@@ -10,10 +10,6 @@ int main(){
     int n, i, j=1, m;
     stack<int> s;
     scanf("%d", &n);
-    vector<int> a(n+1); //인덱스 벡터
-    for(i=1;i<=n;i++){
-        a[i]=i;
-    }
     vector<char> str; //push_back으로 넣으면 공간 생김
     for(i=1;i<=n;i++){
         scanf("%d", &m); //기차 읽기
@@ -21,8 +17,8 @@ int main(){
         str.push_back('P');
         while(1){
             if(s.empty()) break; //값 없으면 break
-            if(a[j]==s.top()){
-                //s.top()이랑 a[j]랑 맞으면 계속 꺼냄
+            if(j==s.top()){
+                //s.top()이랑 j랑 맞으면 계속 꺼냄
                 s.pop();
                 j++;
                 str.push_back('O');
